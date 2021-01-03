@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import contextily as ctx
 from adjustText import adjust_text
 
+gdf = gpd.read_file('data.shp')
+
 # transforms to EPSG 3857 to align with ctx basemaps
 gdf = gdf.to_crs(epsg=3857)
 
@@ -15,11 +17,11 @@ gdf = gdf.to_crs(epsg=3857)
 site = gdf.groupby()
 
 
-plt.figure(figsize =())
+plt.figure(figsize =(20,20))
 
 # Iterate through sites
 
-for i, (j, k) in enumerate():
+for i, (j, k) in enumerate(site):
     # create subplot axes in a n*n grid
     ax = plt.subplot(n_rows, n_cols, i + 1) # nrows, ncols, axes position
     # plot the site on these axes
